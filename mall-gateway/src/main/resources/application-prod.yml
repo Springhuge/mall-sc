@@ -1,0 +1,5 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mall-registry:8888/eureka/
+    registry-fetch-interval-seconds: 10
