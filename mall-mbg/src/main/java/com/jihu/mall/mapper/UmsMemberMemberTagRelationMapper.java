@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberMemberTagRelation;
-import com.jihu.mall.model.UmsMemberMemberTagRelationExample;
+import com.jihu.mall.oms.UmsMemberMemberTagRelation;
+import com.jihu.mall.oms.UmsMemberMemberTagRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

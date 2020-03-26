@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberStatisticsInfo;
-import com.jihu.mall.model.UmsMemberStatisticsInfoExample;
+import com.jihu.mall.oms.UmsMemberStatisticsInfo;
+import com.jihu.mall.oms.UmsMemberStatisticsInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

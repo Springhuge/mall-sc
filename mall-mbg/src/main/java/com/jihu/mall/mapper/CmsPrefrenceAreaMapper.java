@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.CmsPrefrenceArea;
-import com.jihu.mall.model.CmsPrefrenceAreaExample;
+import com.jihu.mall.oms.CmsPrefrenceArea;
+import com.jihu.mall.oms.CmsPrefrenceAreaExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

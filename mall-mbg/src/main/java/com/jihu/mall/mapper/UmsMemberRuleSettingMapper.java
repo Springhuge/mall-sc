@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberRuleSetting;
-import com.jihu.mall.model.UmsMemberRuleSettingExample;
+import com.jihu.mall.oms.UmsMemberRuleSetting;
+import com.jihu.mall.oms.UmsMemberRuleSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.CmsPrefrenceAreaProductRelation;
-import com.jihu.mall.model.CmsPrefrenceAreaProductRelationExample;
+import com.jihu.mall.oms.CmsPrefrenceAreaProductRelation;
+import com.jihu.mall.oms.CmsPrefrenceAreaProductRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

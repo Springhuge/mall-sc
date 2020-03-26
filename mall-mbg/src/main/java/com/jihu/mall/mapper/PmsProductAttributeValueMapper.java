@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductAttributeValue;
-import com.jihu.mall.model.PmsProductAttributeValueExample;
+import com.jihu.mall.oms.PmsProductAttributeValue;
+import com.jihu.mall.oms.PmsProductAttributeValueExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

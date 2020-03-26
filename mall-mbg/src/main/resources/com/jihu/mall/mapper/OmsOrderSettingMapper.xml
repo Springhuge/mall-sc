@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.OmsOrderSettingMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.OmsOrderSetting">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.OmsOrderSetting">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="flash_order_overtime" jdbcType="INTEGER" property="flashOrderOvertime" />
     <result column="normal_order_overtime" jdbcType="INTEGER" property="normalOrderOvertime" />
@@ -71,7 +71,7 @@
     id, flash_order_overtime, normal_order_overtime, confirm_overtime, finish_overtime, 
     comment_overtime
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.OmsOrderSettingExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.OmsOrderSettingExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -95,13 +95,13 @@
     delete from oms_order_setting
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.OmsOrderSettingExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.OmsOrderSettingExample">
     delete from oms_order_setting
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.OmsOrderSetting">
+  <insert id="insert" parameterType="com.jihu.mall.oms.OmsOrderSetting">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -112,7 +112,7 @@
       #{confirmOvertime,jdbcType=INTEGER}, #{finishOvertime,jdbcType=INTEGER}, #{commentOvertime,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.OmsOrderSetting">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.OmsOrderSetting">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -152,7 +152,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.OmsOrderSettingExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.OmsOrderSettingExample" resultType="java.lang.Long">
     select count(*) from oms_order_setting
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -196,7 +196,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.OmsOrderSetting">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.OmsOrderSetting">
     update oms_order_setting
     <set>
       <if test="flashOrderOvertime != null">
@@ -217,7 +217,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.OmsOrderSetting">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.OmsOrderSetting">
     update oms_order_setting
     set flash_order_overtime = #{flashOrderOvertime,jdbcType=INTEGER},
       normal_order_overtime = #{normalOrderOvertime,jdbcType=INTEGER},

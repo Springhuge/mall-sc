@@ -29,7 +29,7 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!--指定生成model的路径-->
-        <javaModelGenerator targetPackage="com.jihu.mall.model" targetProject="mall-mbg\src\main\java"/>
+        <javaModelGenerator targetPackage="com.jihu.mall.oms" targetProject="mall-mbg\src\main\java"/>
         <!--指定生成mapper.xml的路径-->
         <sqlMapGenerator targetPackage="com.jihu.mall.mapper" targetProject="mall-mbg\src\main\resources"/>
         <!--指定生成mapper接口的的路径-->

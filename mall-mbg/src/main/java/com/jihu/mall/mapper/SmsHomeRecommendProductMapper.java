@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.SmsHomeRecommendProduct;
-import com.jihu.mall.model.SmsHomeRecommendProductExample;
+import com.jihu.mall.oms.SmsHomeRecommendProduct;
+import com.jihu.mall.oms.SmsHomeRecommendProductExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

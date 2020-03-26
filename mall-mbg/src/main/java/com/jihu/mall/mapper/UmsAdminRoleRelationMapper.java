@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsAdminRoleRelation;
-import com.jihu.mall.model.UmsAdminRoleRelationExample;
+import com.jihu.mall.oms.UmsAdminRoleRelation;
+import com.jihu.mall.oms.UmsAdminRoleRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

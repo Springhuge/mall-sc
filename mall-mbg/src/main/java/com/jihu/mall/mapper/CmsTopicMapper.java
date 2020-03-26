@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.CmsTopic;
-import com.jihu.mall.model.CmsTopicExample;
+import com.jihu.mall.oms.CmsTopic;
+import com.jihu.mall.oms.CmsTopicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

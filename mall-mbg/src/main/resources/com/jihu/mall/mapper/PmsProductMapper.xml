@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.PmsProductMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.PmsProduct">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.PmsProduct">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="brand_id" jdbcType="BIGINT" property="brandId" />
     <result column="product_category_id" jdbcType="BIGINT" property="productCategoryId" />
@@ -41,7 +41,7 @@
     <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
     <result column="product_category_name" jdbcType="VARCHAR" property="productCategoryName" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.jihu.mall.model.PmsProduct">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.jihu.mall.oms.PmsProduct">
     <result column="description" jdbcType="LONGVARCHAR" property="description" />
     <result column="detail_desc" jdbcType="LONGVARCHAR" property="detailDesc" />
     <result column="detail_html" jdbcType="LONGVARCHAR" property="detailHtml" />
@@ -116,7 +116,7 @@
   <sql id="Blob_Column_List">
     description, detail_desc, detail_html, detail_mobile_html
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.jihu.mall.model.PmsProductExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.jihu.mall.oms.PmsProductExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -132,7 +132,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.PmsProductExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.PmsProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -158,13 +158,13 @@
     delete from pms_product
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.PmsProductExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.PmsProductExample">
     delete from pms_product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.PmsProduct">
+  <insert id="insert" parameterType="com.jihu.mall.oms.PmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -197,7 +197,7 @@
       #{productCategoryName,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}, #{detailDesc,jdbcType=LONGVARCHAR}, 
       #{detailHtml,jdbcType=LONGVARCHAR}, #{detailMobileHtml,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.PmsProduct">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.PmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -453,7 +453,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.PmsProductExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.PmsProductExample" resultType="java.lang.Long">
     select count(*) from pms_product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -685,7 +685,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.PmsProduct">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.PmsProduct">
     update pms_product
     <set>
       <if test="brandId != null">
@@ -814,7 +814,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jihu.mall.model.PmsProduct">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jihu.mall.oms.PmsProduct">
     update pms_product
     set brand_id = #{brandId,jdbcType=BIGINT},
       product_category_id = #{productCategoryId,jdbcType=BIGINT},
@@ -859,7 +859,7 @@
       detail_mobile_html = #{detailMobileHtml,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.PmsProduct">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.PmsProduct">
     update pms_product
     set brand_id = #{brandId,jdbcType=BIGINT},
       product_category_id = #{productCategoryId,jdbcType=BIGINT},

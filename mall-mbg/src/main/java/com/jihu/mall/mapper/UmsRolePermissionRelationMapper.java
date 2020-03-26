@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsRolePermissionRelation;
-import com.jihu.mall.model.UmsRolePermissionRelationExample;
+import com.jihu.mall.oms.UmsRolePermissionRelation;
+import com.jihu.mall.oms.UmsRolePermissionRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

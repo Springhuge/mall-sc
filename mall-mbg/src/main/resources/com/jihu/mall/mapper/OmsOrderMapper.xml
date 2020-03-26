@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.OmsOrderMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.OmsOrder">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.OmsOrder">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="member_id" jdbcType="BIGINT" property="memberId" />
     <result column="coupon_id" jdbcType="BIGINT" property="couponId" />
@@ -114,7 +114,7 @@
     receiver_city, receiver_region, receiver_detail_address, note, confirm_status, delete_status, 
     use_integration, payment_time, delivery_time, receive_time, comment_time, modify_time
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.OmsOrderExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.OmsOrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -138,13 +138,13 @@
     delete from oms_order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.OmsOrderExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.OmsOrderExample">
     delete from oms_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.OmsOrder">
+  <insert id="insert" parameterType="com.jihu.mall.oms.OmsOrder">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -179,7 +179,7 @@
       #{deliveryTime,jdbcType=TIMESTAMP}, #{receiveTime,jdbcType=TIMESTAMP}, #{commentTime,jdbcType=TIMESTAMP}, 
       #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.OmsOrder">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.OmsOrder">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -447,7 +447,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.OmsOrderExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.OmsOrderExample" resultType="java.lang.Long">
     select count(*) from oms_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -643,7 +643,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.OmsOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.OmsOrder">
     update oms_order
     <set>
       <if test="memberId != null">
@@ -778,7 +778,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.OmsOrder">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.OmsOrder">
     update oms_order
     set member_id = #{memberId,jdbcType=BIGINT},
       coupon_id = #{couponId,jdbcType=BIGINT},

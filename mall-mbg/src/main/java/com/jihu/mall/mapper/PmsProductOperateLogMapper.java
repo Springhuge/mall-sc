@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductOperateLog;
-import com.jihu.mall.model.PmsProductOperateLogExample;
+import com.jihu.mall.oms.PmsProductOperateLog;
+import com.jihu.mall.oms.PmsProductOperateLogExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

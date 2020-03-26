@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductFullReduction;
-import com.jihu.mall.model.PmsProductFullReductionExample;
+import com.jihu.mall.oms.PmsProductFullReduction;
+import com.jihu.mall.oms.PmsProductFullReductionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

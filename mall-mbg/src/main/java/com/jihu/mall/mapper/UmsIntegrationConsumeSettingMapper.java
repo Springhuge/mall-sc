@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsIntegrationConsumeSetting;
-import com.jihu.mall.model.UmsIntegrationConsumeSettingExample;
+import com.jihu.mall.oms.UmsIntegrationConsumeSetting;
+import com.jihu.mall.oms.UmsIntegrationConsumeSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

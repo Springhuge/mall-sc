@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsSkuStock;
-import com.jihu.mall.model.PmsSkuStockExample;
+import com.jihu.mall.oms.PmsSkuStock;
+import com.jihu.mall.oms.PmsSkuStockExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

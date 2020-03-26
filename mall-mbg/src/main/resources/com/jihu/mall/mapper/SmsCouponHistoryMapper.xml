@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.SmsCouponHistoryMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.SmsCouponHistory">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.SmsCouponHistory">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="coupon_id" jdbcType="BIGINT" property="couponId" />
     <result column="member_id" jdbcType="BIGINT" property="memberId" />
@@ -76,7 +76,7 @@
     id, coupon_id, member_id, coupon_code, member_nickname, get_type, create_time, use_status, 
     use_time, order_id, order_sn
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.SmsCouponHistoryExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.SmsCouponHistoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -100,13 +100,13 @@
     delete from sms_coupon_history
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.SmsCouponHistoryExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.SmsCouponHistoryExample">
     delete from sms_coupon_history
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.SmsCouponHistory">
+  <insert id="insert" parameterType="com.jihu.mall.oms.SmsCouponHistory">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -119,7 +119,7 @@
       #{useStatus,jdbcType=INTEGER}, #{useTime,jdbcType=TIMESTAMP}, #{orderId,jdbcType=BIGINT}, 
       #{orderSn,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.SmsCouponHistory">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.SmsCouponHistory">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.SmsCouponHistoryExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.SmsCouponHistoryExample" resultType="java.lang.Long">
     select count(*) from sms_coupon_history
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -253,7 +253,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.SmsCouponHistory">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.SmsCouponHistory">
     update sms_coupon_history
     <set>
       <if test="couponId != null">
@@ -289,7 +289,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.SmsCouponHistory">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.SmsCouponHistory">
     update sms_coupon_history
     set coupon_id = #{couponId,jdbcType=BIGINT},
       member_id = #{memberId,jdbcType=BIGINT},

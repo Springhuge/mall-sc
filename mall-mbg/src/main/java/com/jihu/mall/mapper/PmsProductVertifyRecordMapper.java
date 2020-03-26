@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductVertifyRecord;
-import com.jihu.mall.model.PmsProductVertifyRecordExample;
+import com.jihu.mall.oms.PmsProductVertifyRecord;
+import com.jihu.mall.oms.PmsProductVertifyRecordExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

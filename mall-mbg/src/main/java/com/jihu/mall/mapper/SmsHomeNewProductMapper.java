@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.SmsHomeNewProduct;
-import com.jihu.mall.model.SmsHomeNewProductExample;
+import com.jihu.mall.oms.SmsHomeNewProduct;
+import com.jihu.mall.oms.SmsHomeNewProductExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.UmsMemberMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.UmsMember">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.UmsMember">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="member_level_id" jdbcType="BIGINT" property="memberLevelId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -85,7 +85,7 @@
     gender, birthday, city, job, personalized_signature, source_type, integration, growth, 
     luckey_count, history_integration
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.UmsMemberExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.UmsMemberExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -109,13 +109,13 @@
     delete from ums_member
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.UmsMemberExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.UmsMemberExample">
     delete from ums_member
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.UmsMember">
+  <insert id="insert" parameterType="com.jihu.mall.oms.UmsMember">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -132,7 +132,7 @@
       #{sourceType,jdbcType=INTEGER}, #{integration,jdbcType=INTEGER}, #{growth,jdbcType=INTEGER}, 
       #{luckeyCount,jdbcType=INTEGER}, #{historyIntegration,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.UmsMember">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.UmsMember">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -250,7 +250,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.UmsMemberExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.UmsMemberExample" resultType="java.lang.Long">
     select count(*) from ums_member
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -346,7 +346,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.UmsMember">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.UmsMember">
     update ums_member
     <set>
       <if test="memberLevelId != null">
@@ -406,7 +406,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.UmsMember">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.UmsMember">
     update ums_member
     set member_level_id = #{memberLevelId,jdbcType=BIGINT},
       username = #{username,jdbcType=VARCHAR},

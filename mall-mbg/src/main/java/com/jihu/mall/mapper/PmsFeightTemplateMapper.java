@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsFeightTemplate;
-import com.jihu.mall.model.PmsFeightTemplateExample;
+import com.jihu.mall.oms.PmsFeightTemplate;
+import com.jihu.mall.oms.PmsFeightTemplateExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

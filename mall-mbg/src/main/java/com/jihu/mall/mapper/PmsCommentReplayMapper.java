@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsCommentReplay;
-import com.jihu.mall.model.PmsCommentReplayExample;
+import com.jihu.mall.oms.PmsCommentReplay;
+import com.jihu.mall.oms.PmsCommentReplayExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

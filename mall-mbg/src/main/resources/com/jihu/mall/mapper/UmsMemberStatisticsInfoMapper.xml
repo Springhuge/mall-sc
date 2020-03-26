@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.UmsMemberStatisticsInfoMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.UmsMemberStatisticsInfo">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.UmsMemberStatisticsInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="member_id" jdbcType="BIGINT" property="memberId" />
     <result column="consume_amount" jdbcType="DECIMAL" property="consumeAmount" />
@@ -82,7 +82,7 @@
     login_count, attend_count, fans_count, collect_product_count, collect_subject_count, 
     collect_topic_count, collect_comment_count, invite_friend_count, recent_order_time
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfoExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -106,13 +106,13 @@
     delete from ums_member_statistics_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfoExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfoExample">
     delete from ums_member_statistics_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfo">
+  <insert id="insert" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfo">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -129,7 +129,7 @@
       #{collectTopicCount,jdbcType=INTEGER}, #{collectCommentCount,jdbcType=INTEGER}, 
       #{inviteFriendCount,jdbcType=INTEGER}, #{recentOrderTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfo">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfo">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -229,7 +229,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfoExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfoExample" resultType="java.lang.Long">
     select count(*) from ums_member_statistics_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -313,7 +313,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfo">
     update ums_member_statistics_info
     <set>
       <if test="memberId != null">
@@ -364,7 +364,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.UmsMemberStatisticsInfo">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.UmsMemberStatisticsInfo">
     update ums_member_statistics_info
     set member_id = #{memberId,jdbcType=BIGINT},
       consume_amount = #{consumeAmount,jdbcType=DECIMAL},

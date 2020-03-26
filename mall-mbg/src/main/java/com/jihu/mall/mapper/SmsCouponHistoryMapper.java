@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.SmsCouponHistory;
-import com.jihu.mall.model.SmsCouponHistoryExample;
+import com.jihu.mall.oms.SmsCouponHistory;
+import com.jihu.mall.oms.SmsCouponHistoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.OmsCartItem;
-import com.jihu.mall.model.OmsCartItemExample;
+import com.jihu.mall.oms.OmsCartItem;
+import com.jihu.mall.oms.OmsCartItemExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

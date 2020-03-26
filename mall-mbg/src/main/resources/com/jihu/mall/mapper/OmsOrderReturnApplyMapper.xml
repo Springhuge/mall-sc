@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.OmsOrderReturnApplyMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.OmsOrderReturnApply">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.OmsOrderReturnApply">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="order_id" jdbcType="BIGINT" property="orderId" />
     <result column="company_address_id" jdbcType="BIGINT" property="companyAddressId" />
@@ -94,7 +94,7 @@
     product_brand, product_attr, product_count, product_price, product_real_price, reason, 
     description, proof_pics, handle_note, handle_man, receive_man, receive_time, receive_note
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.OmsOrderReturnApplyExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.OmsOrderReturnApplyExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -118,13 +118,13 @@
     delete from oms_order_return_apply
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.OmsOrderReturnApplyExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.OmsOrderReturnApplyExample">
     delete from oms_order_return_apply
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.OmsOrderReturnApply">
+  <insert id="insert" parameterType="com.jihu.mall.oms.OmsOrderReturnApply">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -147,7 +147,7 @@
       #{handleNote,jdbcType=VARCHAR}, #{handleMan,jdbcType=VARCHAR}, #{receiveMan,jdbcType=VARCHAR}, 
       #{receiveTime,jdbcType=TIMESTAMP}, #{receiveNote,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.OmsOrderReturnApply">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.OmsOrderReturnApply">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -313,7 +313,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.OmsOrderReturnApplyExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.OmsOrderReturnApplyExample" resultType="java.lang.Long">
     select count(*) from oms_order_return_apply
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -441,7 +441,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.OmsOrderReturnApply">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.OmsOrderReturnApply">
     update oms_order_return_apply
     <set>
       <if test="orderId != null">
@@ -525,7 +525,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.OmsOrderReturnApply">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.OmsOrderReturnApply">
     update oms_order_return_apply
     set order_id = #{orderId,jdbcType=BIGINT},
       company_address_id = #{companyAddressId,jdbcType=BIGINT},

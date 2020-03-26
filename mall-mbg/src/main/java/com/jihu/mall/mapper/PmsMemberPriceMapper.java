@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsMemberPrice;
-import com.jihu.mall.model.PmsMemberPriceExample;
+import com.jihu.mall.oms.PmsMemberPrice;
+import com.jihu.mall.oms.PmsMemberPriceExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsGrowthChangeHistory;
-import com.jihu.mall.model.UmsGrowthChangeHistoryExample;
+import com.jihu.mall.oms.UmsGrowthChangeHistory;
+import com.jihu.mall.oms.UmsGrowthChangeHistoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

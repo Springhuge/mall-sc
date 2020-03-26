@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.OmsCompanyAddress;
-import com.jihu.mall.model.OmsCompanyAddressExample;
+import com.jihu.mall.oms.OmsCompanyAddress;
+import com.jihu.mall.oms.OmsCompanyAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

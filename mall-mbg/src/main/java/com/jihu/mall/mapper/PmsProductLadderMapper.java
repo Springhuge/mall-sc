@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductLadder;
-import com.jihu.mall.model.PmsProductLadderExample;
+import com.jihu.mall.oms.PmsProductLadder;
+import com.jihu.mall.oms.PmsProductLadderExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

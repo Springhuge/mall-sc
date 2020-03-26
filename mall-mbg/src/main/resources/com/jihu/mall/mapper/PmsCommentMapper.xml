@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.PmsCommentMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.PmsComment">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.PmsComment">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="product_id" jdbcType="BIGINT" property="productId" />
     <result column="member_nick_name" jdbcType="VARCHAR" property="memberNickName" />
@@ -17,7 +17,7 @@
     <result column="member_icon" jdbcType="VARCHAR" property="memberIcon" />
     <result column="replay_count" jdbcType="INTEGER" property="replayCount" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.jihu.mall.model.PmsComment">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.jihu.mall.oms.PmsComment">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -85,7 +85,7 @@
   <sql id="Blob_Column_List">
     content
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.jihu.mall.model.PmsCommentExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.jihu.mall.oms.PmsCommentExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -101,7 +101,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.PmsCommentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.PmsCommentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -127,13 +127,13 @@
     delete from pms_comment
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.PmsCommentExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.PmsCommentExample">
     delete from pms_comment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.PmsComment">
+  <insert id="insert" parameterType="com.jihu.mall.oms.PmsComment">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -148,7 +148,7 @@
       #{readCount,jdbcType=INTEGER}, #{pics,jdbcType=VARCHAR}, #{memberIcon,jdbcType=VARCHAR}, 
       #{replayCount,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.PmsComment">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.PmsComment">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -242,7 +242,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.PmsCommentExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.PmsCommentExample" resultType="java.lang.Long">
     select count(*) from pms_comment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -342,7 +342,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.PmsComment">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.PmsComment">
     update pms_comment
     <set>
       <if test="productId != null">
@@ -390,7 +390,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jihu.mall.model.PmsComment">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jihu.mall.oms.PmsComment">
     update pms_comment
     set product_id = #{productId,jdbcType=BIGINT},
       member_nick_name = #{memberNickName,jdbcType=VARCHAR},
@@ -408,7 +408,7 @@
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.PmsComment">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.PmsComment">
     update pms_comment
     set product_id = #{productId,jdbcType=BIGINT},
       member_nick_name = #{memberNickName,jdbcType=VARCHAR},

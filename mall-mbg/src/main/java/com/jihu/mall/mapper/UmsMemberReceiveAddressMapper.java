@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberReceiveAddress;
-import com.jihu.mall.model.UmsMemberReceiveAddressExample;
+import com.jihu.mall.oms.UmsMemberReceiveAddress;
+import com.jihu.mall.oms.UmsMemberReceiveAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

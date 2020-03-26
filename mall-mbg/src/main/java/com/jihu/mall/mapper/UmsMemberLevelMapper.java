@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberLevel;
-import com.jihu.mall.model.UmsMemberLevelExample;
+import com.jihu.mall.oms.UmsMemberLevel;
+import com.jihu.mall.oms.UmsMemberLevelExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.SmsFlashPromotionSession;
-import com.jihu.mall.model.SmsFlashPromotionSessionExample;
+import com.jihu.mall.oms.SmsFlashPromotionSession;
+import com.jihu.mall.oms.SmsFlashPromotionSessionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

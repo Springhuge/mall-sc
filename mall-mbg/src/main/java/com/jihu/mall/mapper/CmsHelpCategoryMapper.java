@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.CmsHelpCategory;
-import com.jihu.mall.model.CmsHelpCategoryExample;
+import com.jihu.mall.oms.CmsHelpCategory;
+import com.jihu.mall.oms.CmsHelpCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

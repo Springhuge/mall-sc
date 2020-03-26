@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsPermission;
-import com.jihu.mall.model.UmsPermissionExample;
+import com.jihu.mall.oms.UmsPermission;
+import com.jihu.mall.oms.UmsPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

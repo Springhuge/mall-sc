@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jihu.mall.mapper.PmsSkuStockMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.model.PmsSkuStock">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.oms.PmsSkuStock">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="product_id" jdbcType="BIGINT" property="productId" />
     <result column="sku_code" jdbcType="VARCHAR" property="skuCode" />
@@ -78,7 +78,7 @@
     id, product_id, sku_code, price, stock, low_stock, sp1, sp2, sp3, pic, sale, promotion_price, 
     lock_stock
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.model.PmsSkuStockExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.oms.PmsSkuStockExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -102,13 +102,13 @@
     delete from pms_sku_stock
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.model.PmsSkuStockExample">
+  <delete id="deleteByExample" parameterType="com.jihu.mall.oms.PmsSkuStockExample">
     delete from pms_sku_stock
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.model.PmsSkuStock">
+  <insert id="insert" parameterType="com.jihu.mall.oms.PmsSkuStock">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -121,7 +121,7 @@
       #{sp2,jdbcType=VARCHAR}, #{sp3,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{sale,jdbcType=INTEGER}, 
       #{promotionPrice,jdbcType=DECIMAL}, #{lockStock,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.model.PmsSkuStock">
+  <insert id="insertSelective" parameterType="com.jihu.mall.oms.PmsSkuStock">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -203,7 +203,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.model.PmsSkuStockExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.jihu.mall.oms.PmsSkuStockExample" resultType="java.lang.Long">
     select count(*) from pms_sku_stock
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -275,7 +275,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.model.PmsSkuStock">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.oms.PmsSkuStock">
     update pms_sku_stock
     <set>
       <if test="productId != null">
@@ -317,7 +317,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.model.PmsSkuStock">
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.oms.PmsSkuStock">
     update pms_sku_stock
     set product_id = #{productId,jdbcType=BIGINT},
       sku_code = #{skuCode,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.PmsProductAttributeCategory;
-import com.jihu.mall.model.PmsProductAttributeCategoryExample;
+import com.jihu.mall.oms.PmsProductAttributeCategory;
+import com.jihu.mall.oms.PmsProductAttributeCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

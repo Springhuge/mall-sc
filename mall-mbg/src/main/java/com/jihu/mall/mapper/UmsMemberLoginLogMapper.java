@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberLoginLog;
-import com.jihu.mall.model.UmsMemberLoginLogExample;
+import com.jihu.mall.oms.UmsMemberLoginLog;
+import com.jihu.mall.oms.UmsMemberLoginLogExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

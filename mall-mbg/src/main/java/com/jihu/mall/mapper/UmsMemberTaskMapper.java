@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsMemberTask;
-import com.jihu.mall.model.UmsMemberTaskExample;
+import com.jihu.mall.oms.UmsMemberTask;
+import com.jihu.mall.oms.UmsMemberTaskExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

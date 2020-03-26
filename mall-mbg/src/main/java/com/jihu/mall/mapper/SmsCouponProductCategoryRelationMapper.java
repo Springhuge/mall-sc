@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.SmsCouponProductCategoryRelation;
-import com.jihu.mall.model.SmsCouponProductCategoryRelationExample;
+import com.jihu.mall.oms.SmsCouponProductCategoryRelation;
+import com.jihu.mall.oms.SmsCouponProductCategoryRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

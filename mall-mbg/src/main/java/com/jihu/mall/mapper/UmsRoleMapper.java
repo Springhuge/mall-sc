@@ -1,7 +1,7 @@
 package com.jihu.mall.mapper;
 
-import com.jihu.mall.model.UmsRole;
-import com.jihu.mall.model.UmsRoleExample;
+import com.jihu.mall.oms.UmsRole;
+import com.jihu.mall.oms.UmsRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
