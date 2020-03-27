@@ -9,6 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mall-common</module>
+        <module>mall-utils</module>
+        <module>mall-model</module>
+        <module>mall-utils</module>
+        <module>mall-config</module>
+        <module>mall-gateway</module>
+        <module>mall-registry</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -73,24 +79,6 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <!--mall通用模块-->
-            <dependency>
-                <groupId>com.macro.mall</groupId>
-                <artifactId>mall-common</artifactId>
-                <version>${mall-common.version}</version>
-            </dependency>
-            <!--mall中MBG生成模块-->
-            <dependency>
-                <groupId>com.macro.mall</groupId>
-                <artifactId>mall-mbg</artifactId>
-                <version>${mall-mbg.version}</version>
-            </dependency>
-            <!--mall安全模块-->
-            <dependency>
-                <groupId>com.macro.mall</groupId>
-                <artifactId>mall-security</artifactId>
-                <version>${mall-security.version}</version>
             </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>
