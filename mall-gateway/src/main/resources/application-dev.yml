@@ -3,3 +3,15 @@ eureka:
     service-url:
       defaultZone: http://localhost:8888/eureka/
     registry-fetch-interval-seconds: 10
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: mall-ums
+         uri: lb://mall-ums
+         predicates:
+            - Path=/admin/**
+       - id: mall-ums
+         uri: lb://mall-ums
+         predicates:
+            - Path=/role/**
