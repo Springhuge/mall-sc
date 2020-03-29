@@ -10,8 +10,13 @@ spring:
       discovery:
         locator:
           enabled: true
+<<<<<<< HEAD
           lower-case-service-id: true
 management:
+=======
+          lower-case-service-id: true #使用小写service-id
+management: #开启SpringBoot Admin的监控
+>>>>>>> 7832477... 鎼缓缃戝叧鏈嶅姟
   endpoints:
     web:
       exposure:

@@ -2,6 +2,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8888/eureka/
+<<<<<<< HEAD
     registry-fetch-interval-seconds: 10
 spring:
   cloud:
@@ -27,3 +28,6 @@ spring:
          uri: lb://mall-ums
          predicates:
             - Path=/resource/**
+=======
+    registry-fetch-interval-seconds: 10
+>>>>>>> 7832477... 搭建网关服务
