@@ -2,6 +2,7 @@ package com.jihu.mall.auth.mapper;
 
 import com.jihu.mall.ums.example.UmsRoleExample;
 import com.jihu.mall.ums.model.UmsMenu;
+import com.jihu.mall.ums.model.UmsResource;
 import com.jihu.mall.ums.model.UmsRole;
 import org.apache.ibatis.annotations.Param;
 
@@ -31,4 +32,8 @@ public interface UmsRoleMapper {
     int updateByPrimaryKey(UmsRole record);
 
     List<UmsMenu> getMenuList(@Param("adminId") Long adminId);
+
+    List<UmsMenu> getMenuListByRoleId(@Param("roleId") Long roleId);
+
+    List<UmsResource> getResourceListByRoleId(@Param("roleId") Long roleId);
 }

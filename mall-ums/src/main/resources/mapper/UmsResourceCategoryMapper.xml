@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jihu.mall.auth.mapper.UmsRoleMapper">
-  <resultMap id="BaseResultMap" type="com.jihu.mall.ums.model.UmsRole">
+<mapper namespace="com.jihu.mall.ums.mapper.UmsResourceCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.jihu.mall.ums.model.UmsResourceCategory">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="admin_count" jdbcType="INTEGER" property="adminCount" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -69,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, description, admin_count, create_time, status, sort
+    id, create_time, name, sort
   </sql>
-  <select id="selectByExample" parameterType="com.jihu.mall.ums.example.UmsRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jihu.mall.ums.example.UmsResourceCategoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ums_role
+    from ums_resource_category
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -88,102 +85,73 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ums_role
+    from ums_resource_category
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from ums_role
+    delete from ums_resource_category
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jihu.mall.ums.example.UmsRoleExample">
-    delete from ums_role
+  <delete id="deleteByExample" parameterType="com.jihu.mall.ums.example.UmsResourceCategoryExample">
+    delete from ums_resource_category
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jihu.mall.ums.model.UmsRole">
+  <insert id="insert" parameterType="com.jihu.mall.ums.model.UmsResourceCategory">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ums_role (name, description, admin_count, 
-      create_time, status, sort
+    insert into ums_resource_category (create_time, name, sort
       )
-    values (#{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{adminCount,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}
+    values (#{createTime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.jihu.mall.ums.model.UmsRole">
+  <insert id="insertSelective" parameterType="com.jihu.mall.ums.model.UmsResourceCategory">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ums_role
+    insert into ums_resource_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        name,
-      </if>
-      <if test="description != null">
-        description,
-      </if>
-      <if test="adminCount != null">
-        admin_count,
-      </if>
       <if test="createTime != null">
         create_time,
       </if>
-      <if test="status != null">
-        status,
+      <if test="name != null">
+        name,
       </if>
       <if test="sort != null">
         sort,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="adminCount != null">
-        #{adminCount,jdbcType=INTEGER},
-      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jihu.mall.ums.example.UmsRoleExample" resultType="java.lang.Long">
-    select count(*) from ums_role
+  <select id="countByExample" parameterType="com.jihu.mall.ums.example.UmsResourceCategoryExample" resultType="java.lang.Long">
+    select count(*) from ums_resource_category
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ums_role
+    update ums_resource_category
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.description != null">
-        description = #{record.description,jdbcType=VARCHAR},
-      </if>
-      <if test="record.adminCount != null">
-        admin_count = #{record.adminCount,jdbcType=INTEGER},
-      </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.status != null">
-        status = #{record.status,jdbcType=INTEGER},
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
@@ -194,35 +162,23 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ums_role
+    update ums_resource_category
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR},
-      admin_count = #{record.adminCount,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      status = #{record.status,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
       sort = #{record.sort,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.ums.model.UmsRole">
-    update ums_role
+  <update id="updateByPrimaryKeySelective" parameterType="com.jihu.mall.ums.model.UmsResourceCategory">
+    update ums_resource_category
     <set>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        description = #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="adminCount != null">
-        admin_count = #{adminCount,jdbcType=INTEGER},
-      </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
@@ -230,71 +186,11 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.ums.model.UmsRole">
-    update ums_role
-    set name = #{name,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
-      admin_count = #{adminCount,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=INTEGER},
+  <update id="updateByPrimaryKey" parameterType="com.jihu.mall.ums.model.UmsResourceCategory">
+    update ums_resource_category
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      name = #{name,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-  <select id="getMenuList" resultType="com.jihu.mall.ums.model.UmsMenu">
-    select
-        m.id id,
-        m.parent_id parentId,
-        m.create_time createTime,
-        m.title title,
-        m.level level,
-        m.sort sort,
-        m.name name,
-        m.icon icon,
-        m.hidden hidden
-    from
-        ums_admin_role_relation ar
-        left join  ums_role r on ar.role_id = r.id
-        left join  ums_role_menu_relation rm on  rm.role_id = r.id
-        left join  ums_menu m on m.id = rm.menu_id
-    where
-        ar.admin_id = #{adminId};
-  </select>
-
-  <select id="getMenuListByRoleId" resultType="com.jihu.mall.ums.model.UmsMenu">
-      select
-          m.id id,
-          m.parent_id parentId,
-          m.create_time createTime,
-          m.title title,
-          m.level level,
-          m.sort sort,
-          m.name name,
-          m.icon icon,
-          m.hidden hidden
-      from
-          ums_role_menu_relation rm
-          left join ums_menu m on rm.menu_id = m.id
-      where
-          rm.role_id = #{roleId}
-          and m.id is not null
-    group by m.id;
-  </select>
-
-  <select id="getResourceListByRoleId" resultType="com.jihu.mall.ums.model.UmsResource">
-    select
-	    r.id id,
-		r.create_time createTime,
-		r.`name` `name`,
-		r.url url,
-		r.description description,
-		r.category_id categoryId
-    FROM
-        ums_role_resource_relation rr
-        left join ums_resource r on rr.resource_id = r.id
-    where
-        rr.role_id = #{roleId}
-        AND r.id IS NOT NULL
-    GROUP BY r.id;
-  </select>
 </mapper>

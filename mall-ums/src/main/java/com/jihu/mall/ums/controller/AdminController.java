@@ -19,10 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@Api(tags = "UmsAdminController" , description = "后台用户管理")
+@Api(tags = "AdminController" , description = "后台用户管理")
 @RestController
 @RequestMapping("/admin")
-public class UmsAdminController {
+public class AdminController {
 
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;

@@ -15,3 +15,15 @@ spring:
          uri: lb://mall-ums
          predicates:
             - Path=/role/**
+       - id: mall-ums
+         uri: lb://mall-ums
+         predicates:
+            - Path=/menu/**
+       - id: mall-ums
+         uri: lb://mall-ums
+         predicates:
+            - Path=/resourceCategory/**
+       - id: mall-ums
+         uri: lb://mall-ums
+         predicates:
+            - Path=/resource/**
