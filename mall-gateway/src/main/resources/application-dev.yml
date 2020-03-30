@@ -27,7 +27,3 @@ spring:
          uri: lb://mall-ums
          predicates:
             - Path=/resource/**
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
